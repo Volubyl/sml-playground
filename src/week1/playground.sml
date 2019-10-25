@@ -56,6 +56,15 @@ fun append (list1 : int list , list2 : int list) =
 
 val resultAppend = append([888,9999], [888]);
 
+fun count (x : int , items : int list ) : int =
+    if null items
+    then x
+    else count (x+1 , tl items)
+
+
+val list = [1,1,1,1, 2, 2, 2 ,2 ,22, 2,2, 2, 2, 2, 2, 1] 
+val baz = count(0, list) (*baz should be 16*)
+
 (*Let Expression*)
 
 fun funny (z : int) =
