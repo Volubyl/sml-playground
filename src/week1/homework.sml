@@ -30,3 +30,9 @@ fun dates_in_month(dateList : (int*int*int) list, monthNumber: int) : (int*int*i
           else 
                dates_in_month(tl dateList, monthNumber)
 
+fun dates_in_months(dateList : (int*int*int) list, monthNumbers: int list) : (int*int*int) list = 
+     if null monthNumbers
+     then []
+     else 
+          dates_in_month(dateList, hd monthNumbers) @ dates_in_months(dateList, tl monthNumbers)
+

@@ -66,3 +66,16 @@ val test13 = dates_in_month(dateList, 5) = [(2019, 05, 05), (1988, 05, 05) ]
 val dateList = []
 val test14 = dates_in_month(dateList, 3) = []
 val test15 = dates_in_month(dateList, 5) = []
+
+(*dates_in_months*)
+
+val dateList = [(2019, 03, 05), (2019, 05, 05), (1988, 05, 05) ]
+val test16 = dates_in_months(dateList, [5]) = [(2019, 05, 05), (1988, 05, 05) ]
+val test17 = dates_in_months(dateList, [3]) = [(2019, 03, 05)]
+val test18 = dates_in_months(dateList, [3,5]) = [(2019, 03, 05), (2019, 05, 05), (1988, 05, 05) ]
+val test19 = dates_in_months(dateList, [8]) = []
+val test20 = dates_in_months(dateList, []) = []
+val test21 = dates_in_months([], []) = []
+val test22 = dates_in_months([], [3]) = []
+
+
