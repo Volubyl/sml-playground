@@ -19,3 +19,14 @@ fun number_in_months (dateList : (int*int*int) list , monthNumbers: int list) :i
      else
           number_in_month(dateList, hd monthNumbers) + number_in_months( dateList, tl monthNumbers) 
    
+
+fun dates_in_month(dateList : (int*int*int) list, monthNumber: int) : (int*int*int) list = 
+     if null dateList
+     then []
+     else 
+          if #2 (hd dateList) = monthNumber
+          then 
+               hd dateList :: dates_in_month(tl dateList, monthNumber)
+          else 
+               dates_in_month(tl dateList, monthNumber)
+

@@ -61,8 +61,8 @@ val test12 = number_in_months(dateList, [5,3]) = 0;
 val dateList = [(2019, 03, 05), (2019, 05, 05), (1988, 05, 05) ]
 
 val test12 = dates_in_month(dateList, 3) = [(2019, 03, 05)]
-val test13 = dates_in_month(dates_in_month, 5) = [(2019, 05, 05), (1988, 05, 05) ]
+val test13 = dates_in_month(dateList, 5) = [(2019, 05, 05), (1988, 05, 05) ]
 
 val dateList = []
 val test14 = dates_in_month(dateList, 3) = []
-val test15 = dates_in_month(dates_in_month, 5) = []
+val test15 = dates_in_month(dateList, 5) = []
