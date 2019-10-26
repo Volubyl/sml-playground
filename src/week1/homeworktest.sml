@@ -85,3 +85,8 @@ val strings = ["foo", "bar", "baz"];
 val test23 = get_nth(strings, 2) = "bar";
 val test24 = get_nth(strings, 0) = "foo";
 val test25 = get_nth(strings, 3) = "baz";
+
+(*date_to_string*)
+
+val test27 = date_to_string((1945,06,26)) = "June 26, 1945"
+val test28 = date_to_string((1988,06,26)) = "June 26, 1988"
