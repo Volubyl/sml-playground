@@ -78,4 +78,10 @@ val test20 = dates_in_months(dateList, []) = []
 val test21 = dates_in_months([], []) = []
 val test22 = dates_in_months([], [3]) = []
 
+(*get_nth*)
 
+val strings = ["foo", "bar", "baz"];
+
+val test23 = get_nth(strings, 2) = "bar";
+val test24 = get_nth(strings, 0) = "foo";
+val test25 = get_nth(strings, 3) = "baz";
