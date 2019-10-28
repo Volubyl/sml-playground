@@ -5,25 +5,14 @@ use "./homework.sml";
 
 (*is_older*)
 
-val date1 = (1905, 03, 25);
-val date2 = (2019, 12,25);
 
-val test1 = is_older(date1, date2) = true
-
-val date1 = (2019, 03, 25);
-val date2 = (2019, 12,25);
-
-val test2 = is_older(date1, date2) = true
-
-val date1 = (2019, 03, 03);
-val date2 = (2019, 03,25);
-
-val test3 = is_older(date1, date2) = true
-
-val date1 = (2019, 03, 25);
-val date2 = (2019, 03,25);
-
-val test3 = is_older(date1, date2) = false
+val is_older_test1 = is_older((1985,11,16),(1985,11,16)) = false
+val is_older_test2 = is_older((1985,11,16),(1985,11,15)) = false
+val is_older_test3 = is_older((1985,11,16),(1985,11,17)) = true
+val is_older_test4 = is_older((1985,11,16),(1985,10,16)) = false
+val is_older_test5 = is_older((1985,11,16),(1985,12,16)) = true
+val is_older_test6 = is_older((1985,11,16),(1984,11,16)) = false
+val is_older_test7 = is_older((1985,11,16),(1986,11,16)) = true
 
 
 (*number_in_month*)
@@ -90,3 +79,11 @@ val test25 = get_nth(strings, 3) = "baz";
 
 val test27 = date_to_string((1945,06,26)) = "June 26, 1945"
 val test28 = date_to_string((1988,06,26)) = "June 26, 1988"
+
+(*oldest*)
+
+
+val test30 = oldest([(2000,31,04), (2012,10,05)]) = SOME((2000,31,04))
+
+
+

@@ -69,7 +69,8 @@ val baz = count(0, list) (*baz should be 16*)
 
 fun funny (z : int) =
     let 
-        val foo = (let val y = 83 
+                val foo =(let 
+                    val y = 83 
                 in 
                     if y > z 
                     then y 
@@ -81,3 +82,37 @@ fun funny (z : int) =
     end
 
 val a = funny(83);
+
+
+fun bad_max(xs :int list) =
+    if null xs
+    then 0
+    else if null (tl xs)
+    then hd xs
+    else if hd xs > bad_max(tl xs)
+    then hd xs
+    else bad_max(tl xs)
+
+fun better_max(xs :int list) =
+    if null xs
+    then 0
+    else if null (tl xs)
+    then hd xs
+    else
+        let val max_tail = better_max(tl xs)
+        in
+            if (hd xs > max_tail)
+            then hd xs
+            else max_tail
+        end    
+
+fun max(xs : int list) : int option = 
+    if null xs
+    then NONE
+    else
+        let val tl_ans = max(tl xs)
+        in 
+            if isSome tl_ans andalso valOf tl_ans > hd xs
+            then tl_ans
+            else SOME (hd xs)
+        end    

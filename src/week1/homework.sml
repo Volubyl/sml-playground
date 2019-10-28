@@ -48,3 +48,16 @@ fun date_to_string(date : int*int*int) :string =
     in 
           get_nth(months, #2 date)^" "^ Int.toString(#3 date) ^", "^ Int.toString(#1 date)
     end
+
+fun oldest (dateList : (int*int*int) list) =
+    if null dateList
+    then NONE
+    else
+          let
+           val tail_oldest = oldest(tl dateList);
+          in
+            if isSome tail_oldest andalso is_older(valOf tail_oldest, hd dateList)
+               then tail_oldest
+               else
+                   SOME(hd dateList)
+          end
