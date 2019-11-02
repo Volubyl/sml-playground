@@ -61,3 +61,10 @@ fun oldest (dateList : (int*int*int) list) =
                else
                    SOME(hd dateList)
           end
+
+fun get_treshold_index(current_sum : int, index: int, sum:int, numberList: int list ):int = 
+    if null numberList
+    then  0
+    else if current_sum + hd numberList >= sum
+    then index
+    else get_treshold_index(current_sum + hd numberList, index +1, sum, tl numberList)

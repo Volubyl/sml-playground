@@ -116,3 +116,10 @@ fun max(xs : int list) : int option =
             then tl_ans
             else SOME (hd xs)
         end    
+
+fun get_treshold_index(current_sum : int, index: int, sum:int, numberList: int list ):int = 
+    if null numberList
+    then  0
+    else if current_sum  >= sum
+    then index - 1
+    else get_treshold_index(current_sum + 1, index +1, sum, tl numberList)

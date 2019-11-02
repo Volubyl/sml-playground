@@ -82,8 +82,7 @@ val test28 = date_to_string((1988,06,26)) = "June 26, 1988"
 
 (*oldest*)
 
+(* val test30 = oldest([(2000,31,04), (2012,10,05)]) = SOME((2000,31,04)) *)
 
-val test30 = oldest([(2000,31,04), (2012,10,05)]) = SOME((2000,31,04))
-
-
-
+(*get_treshold_index*)
+val test31 = get_treshold_index(0,0,10,[1,2,3,4,5]) = 3
