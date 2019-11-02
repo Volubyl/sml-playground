@@ -92,7 +92,7 @@ You should return an int such that the first elements of the list add to less th
 
 => In other word, we shoud figure out which is the index of item added to the sum of the previous one is less or equals the sum.
 
-#### Dividing the problem :
+#### Let's break the problem:
 
 How can we find the index of an item in a array ?
 
@@ -196,4 +196,31 @@ fun  get_sum_treshold(current_sum, index, sumToReach, list) =
     }
      #lightgreen:RETURN index (3);
 @enduml
+```
+
+This function does not really answer to the first need. The function we have to write takes only two arguments :
+
+- an int called sum
+- an int list
+
+The previous function we wrote takes much more arguments. So how could we rewrite our function to pass the required arguments only ? Maybe could we transform `get_sum_treshold` in a nested function ?
+
+Let's write this out !
+
+```sml
+fun  number_before_reaching_sum (sum:int, list: int list) : int =
+
+        (*Here we declare get_sum_treshold as a nested function of number_before_reaching_sum*)
+        (*get_sum_treshold only lives inside the scope of number_before_reaching_sum*)
+
+        DECLARE function  get_sum_treshold(current_sum, index, list) =
+                     IF list IS EMPTY
+                        RETURN 0
+                     ELSE  IF current_sum + first item of the list >= sum
+                        RETURN index
+                     ELSE
+                        RETURN get_sum_treshold(current_sum + HEAD OF list, index +1 , sum, list)
+
+        get_sum_treshold(0,0,list)
+
 ```

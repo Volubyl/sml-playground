@@ -68,3 +68,16 @@ fun get_treshold_index(current_sum : int, index: int, sum:int, numberList: int l
     else if current_sum + hd numberList >= sum
     then index
     else get_treshold_index(current_sum + hd numberList, index +1, sum, tl numberList)
+
+
+fun  number_before_reaching_sum (sum:int, list: int list) : int
+     let
+          val get_treshold_index = fun (current_sum : int, index: int, numberList: int list ):int = 
+               if null numberList
+               then  0
+               else if current_sum + hd numberList >= sum
+               then index
+               else get_treshold_index(current_sum + hd numberList, index +1, sum, tl numberList)
+     in
+          get_treshold_index(0,0,list)
+     end
